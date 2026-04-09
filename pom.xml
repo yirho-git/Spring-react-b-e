@@ -86,27 +86,52 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- 스프링 시큐리티 추가 -->
+
+        <!-- Spring Security 의존 라이브러리 -->
+        <!-- 시큐리티 전체 기능 제공(엔진) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- JSP에서 쓰는 태그 라이브러리 -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+        </dependency>
+
+        <!-- 테스트용(JUnit테스트 등) 라이브러리 -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- Spring Security 의존 라이브러리 end -->
+
+        <!--Java JWT 의존 라이브러리 -->
+        <!-- API -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-api</artifactId>
-            <version>0.12.3</version>
+            <version>0.11.5</version>
         </dependency>
 
+        <!-- 구현체 (필수) -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-impl</artifactId>
-            <version>0.12.3</version>
+            <version>0.11.5</version>
             <scope>runtime</scope>
         </dependency>
 
+        <!-- JSON 처리 (필수) -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-jackson</artifactId>
-            <version>0.12.3</version>
+            <version>0.11.5</version>
             <scope>runtime</scope>
         </dependency>
-        <!-- 스프링 시큐리티 추가 end -->
+        <!--Java JWT 의존 라이브러리 end -->
 
     </dependencies>
 
