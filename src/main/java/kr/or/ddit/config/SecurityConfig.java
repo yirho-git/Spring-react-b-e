@@ -38,7 +38,15 @@ public class SecurityConfig {
     public WebSecurityCustomizer configurer(){
         return (web -> web.ignoring()
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations())
-                .requestMatchers("/resources/**"));
+                // requestMatchers() :: 괄호 안의 조건을 만족하는 요청을 찾아라
+                // toStaticResources() :: 정적 리소스 범주
+                // atCommonsLocations() :: 스프링이 정한(약속된) 공통(정적) 자원 위치
+                .requestMatchers("/resources/**")); // 중에서 /resources/ 경로에 있는 파일과 모든 깊이의 하위파일들까지 선정
+    }
+
+    @Bean
+    protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http.csrf( csrf -> csrf.disable());
     }
 
 
